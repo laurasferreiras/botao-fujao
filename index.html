@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pergunta séria</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+<style type="text/css">
+    #estilo {
+        background-color: rgb(255, 210, 217);
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        text-align: center;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+    #estilo::before,
+    #estilo::after {
+        content: "💖💗💘💕💞";
+        font-size: 24px;
+        display: block;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    #estilo::after {
+        margin-top: 10px;
+        margin-bottom: 0;
+    }
+
+    .btn {
+        background: black;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 15%;
+    }
+
+    body {
+        font-family: 'Montserrat', sans-serif;
+    }
+
+</style>
+
+<body id="corpo">
+    <div id="estilo">
+        <strong style="font-size: 35px;">oi moreco</strong>
+        <strong style="padding: 15px;">você promete que vai me amar pra todo sempre até o mundo acabar eternamente todos os dias?</strong>
+        <div style="display: flex; gap: 20px; padding: 15px;">
+            <button class="btn" onclick="sim()">SIM</button>
+            <button class="btn" onmouseover="desvia(this)">NÃO</button>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function sim() {
+    window.location.href = "sim.html";
+    }
+
+    function desvia(t) {
+        var btn = t
+        btn.style.position = 'absolute';
+        btn.style.top = geraPosicao(10, 90)
+        btn.style.left = geraPosicao(10, 90)
+        console.log('opa, desviei...')
+    }
+
+    function geraPosicao(min, max) {
+        return (Math.random() * (max - min) + min) + '%'
+    }
+</script>
